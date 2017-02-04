@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.2.0">
+<eagle version="7.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -5630,6 +5630,10 @@ straight</description>
 <part name="JP20" library="SparkFun-Connectors" deviceset="M03" device="PTH"/>
 <part name="U$2" library="LSF-SMT" deviceset="LSF-SMT" device=""/>
 <part name="X1" library="con-panduit" deviceset="057-034-" device="1"/>
+<part name="R12" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="10k"/>
+<part name="R13" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="10k"/>
+<part name="SUPPLY10" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
+<part name="SUPPLY12" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5756,6 +5760,10 @@ straight</description>
 <instance part="X1" gate="-32" x="1559.56" y="292.1"/>
 <instance part="X1" gate="-33" x="1536.7" y="287.02"/>
 <instance part="X1" gate="-34" x="1559.56" y="287.02"/>
+<instance part="R12" gate="G$1" x="1706.88" y="330.2" rot="R90"/>
+<instance part="R13" gate="G$1" x="1722.12" y="330.2" rot="R90"/>
+<instance part="SUPPLY10" gate="G$1" x="1706.88" y="340.36"/>
+<instance part="SUPPLY12" gate="G$1" x="1722.12" y="340.36"/>
 </instances>
 <busses>
 </busses>
@@ -6108,6 +6116,16 @@ straight</description>
 <wire x1="1531.62" y1="368.3" x2="1518.92" y2="368.3" width="0.1524" layer="91"/>
 <label x="1518.92" y="368.3" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="R12" gate="G$1" pin="2"/>
+<pinref part="SUPPLY10" gate="G$1" pin="VCC"/>
+<wire x1="1706.88" y1="340.36" x2="1706.88" y2="335.28" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R13" gate="G$1" pin="2"/>
+<pinref part="SUPPLY12" gate="G$1" pin="VCC"/>
+<wire x1="1722.12" y1="340.36" x2="1722.12" y2="335.28" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="RXI" class="0">
 <segment>
@@ -6256,6 +6274,10 @@ straight</description>
 <wire x1="1871.98" y1="251.46" x2="1877.06" y2="251.46" width="0.1524" layer="91"/>
 <label x="1877.06" y="251.46" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="R12" gate="G$1" pin="1"/>
+<wire x1="1706.88" y1="325.12" x2="1706.88" y2="317.5" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="SCL" class="0">
 <segment>
@@ -6282,6 +6304,10 @@ straight</description>
 <pinref part="U3" gate="G$1" pin="PC5(ADC5/SCL)"/>
 <wire x1="1871.98" y1="248.92" x2="1877.06" y2="248.92" width="0.1524" layer="91"/>
 <label x="1877.06" y="248.92" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R13" gate="G$1" pin="1"/>
+<wire x1="1722.12" y1="325.12" x2="1722.12" y2="317.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="A6" class="0">
@@ -6661,6 +6687,10 @@ straight</description>
 <wire x1="1836.42" y1="144.78" x2="1836.42" y2="134.62" width="0.1524" layer="91"/>
 <pinref part="JP18" gate="G$1" pin="4"/>
 </segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="PB1(OC1A)"/>
+<wire x1="1871.98" y1="213.36" x2="1877.06" y2="213.36" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="LED-D10" class="0">
 <segment>
@@ -6760,12 +6790,6 @@ straight</description>
 <wire x1="1656.08" y1="144.78" x2="1656.08" y2="147.32" width="0.1524" layer="91"/>
 <pinref part="R10" gate="G$1" pin="1"/>
 <pinref part="JP20" gate="G$1" pin="3"/>
-</segment>
-</net>
-<net name="N$13" class="0">
-<segment>
-<pinref part="U3" gate="G$1" pin="PB1(OC1A)"/>
-<wire x1="1871.98" y1="213.36" x2="1877.06" y2="213.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$14" class="0">
